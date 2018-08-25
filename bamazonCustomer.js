@@ -1,6 +1,6 @@
 // Pull in required dependencies
-
-var inquirer = require('inquirer');
+var mysql =require("mysql");
+var inquirer = require("inquirer");
 
 
 // Define the MySQL connection parameters

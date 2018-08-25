@@ -1,6 +1,7 @@
--- Step 2 - execute the line below in MySQL workbench to create database
--- Create a database called 'Bamazon' and switch into it for this activity --
+Drop database if exists Bamazon;
+
 CREATE DATABASE Bamazon;
+
 USE Bamazon;
 
 -- Create a table called 'products' which will contain the store inventory --
@@ -15,23 +16,50 @@ CREATE TABLE products (
 
 -- Insert data into the 'products' table --
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES  ('Dove Shampoo', 'Cosmetics', 5.75, 500),
-		('Dove Conditioner', 'Cosmetics', 6.25, 627),
-		('Glad 12 Gal Trash Bags', 'Grocery', 5.99, 300),
-		('Brawny Paper Towels', 'Grocery', 4.25, 400),
-		('Granny Smith Apples', 'Produce', 0.35, 800),
-		('Chiquita Bannana', 'Produce', 0.20, 10000),
-		('Tropicana Orange Juice', 'Grocery', 4.45, 267),
-		('Horizon Organic Milk', 'Grocery', 4.50, 200),
-		('Huggies Diapers', 'Children', 2.75, 476),
-		('Charmin Toiler Paper', 'Grocery', 12.99, 575),
-		('Pampers Baby Wipes', 'Children', 1.50, 423),
-		('Yoga Mat', 'Sports', 12.75, 150),
-		('5lb Dumb bell', 'Sports', 7.99, 89),
-		('Tie Dye Shirt', 'Clothing', 5.55, 120),
-		('Nike Shorts', 'Clothing', 17.88, 250),
-		('Purina Cat Chow', 'Pet', 7.25, 157),
-		('Fancy Feast Wet Cat Food', 'Pet', 12.50, 163),
-		('Ibuprophen', 'Pharmacy', 4.95, 389),
-		('Band Aid', 'Pharmacy', 3.25, 550),
-		('Ben & Jerry Ice Cream', 'Grocery', 3.25, 432);
+VALUES  ('Pepsi', 'Grocery', 4.75, 500);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Mountain Dew', 'Grocery', 5.25, 450);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Dorrito Chips', 'Grocery', 5.99, 309);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Frito Lays Baked Chips', 'Grocery', 4.25, 400);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Express Pants', 'Apparel', 85.89, 100);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Abrecrombie Shirt', 'Apparel', 0.20, 1000);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Guess Shorts', 'Apparel', 4.45, 267);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Shelby Mustang toy', 'Toys', 15.00, 50);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Porshe 911 toy', 'Toy', 19.78, 47);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ('Jeep Wrangler toy', 'Toy', 13.85, 57);
+
+SELECT * FROM products;
+
+
+CREATE TABLE departments(
+dept_id integer auto_increment NOT NULL PRIMARY KEY,
+department_name varchar(30) NULL,
+overhead_costs numeric(10,2)
+);
+
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ('Toy', 500000.00)
+, ('Apperal', 25000.00)
+, ('Grocery', 20000);
+
+
+
+SELECT * FROM departments;
