@@ -37,7 +37,7 @@ function promptUserPurchase() {
 		{
 			type: 'input',
 			name: 'item_id',
-			message: 'Please enter the Item ID which you would like to purchase.',
+			message: 'Please enter the Item ID you would like to purchase.',
 			validate: validateInput,
 			filter: Number
 		},
@@ -86,7 +86,7 @@ function promptUserPurchase() {
 						if (err) throw err;
 
 						console.log('Your oder has been placed! Your total is $' + productData.price * quantity);
-						console.log('Thank you for shopping with us!');
+						console.log('Thank you for buying our product!');
 						console.log("\n---------------------------------------------------------------------\n");
 
 						// End the database connection

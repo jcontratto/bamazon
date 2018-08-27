@@ -22,19 +22,19 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ('Mountain Dew', 'Grocery', 5.25, 450);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('Dorrito Chips', 'Grocery', 5.99, 309);
+VALUES ('Dorito Chips', 'Grocery', 5.99, 309);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ('Frito Lays Baked Chips', 'Grocery', 4.25, 400);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('Express Pants', 'Apparel', 85.89, 100);
+VALUES ('Express Pants', 'Apparel', 85.89, 1000);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('Abrecrombie Shirt', 'Apparel', 0.20, 1000);
+VALUES ('Abercrombie Shirt', 'Apparel', 45.20, 1000);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ('Guess Shorts', 'Apparel', 4.45, 267);
+VALUES ('Guess Shorts', 'Apparel', 22.45, 2670);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ('Shelby Mustang toy', 'Toys', 15.00, 50);
@@ -55,11 +55,15 @@ overhead_costs numeric(10,2)
 );
 
 
-INSERT INTO departments (department_name, overhead_costs)
-VALUES ('Toy', 500000.00)
-, ('Apperal', 25000.00)
-, ('Grocery', 20000);
 
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ('Toy', 500000.00);
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ('Apperal', 25000.00);
+
+INSERT INTO departments (department_name, overhead_costs)
+VALUES ('Grocery', 20000);
 
 
 SELECT * FROM departments;
