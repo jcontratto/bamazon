@@ -1,86 +1,40 @@
-Instructions
+Bamazon 
 
+A virtual storefront implemented with Node.js and MySQL. The store and its database can be interacted with as a customer, manager, or supervisor, where each role allows different permissions and functionality.
 
-Challenge #1: Customer View (Minimum Requirement)
+Installation
+Clone this repository: git clone https://github.com/jcontratto/bamazon.git
 
+You will need to set up a local database to run this code. The database and tables were created using the SQL in bamazon_db.sql and the authentication in connection.js. Edit this file to fit your local instance.
 
-Create a MySQL Database called bamazon.
-Then create a Table inside of that database called products.
-The products table should have each of the following columns:
+Install npm dependencies with npm install
 
+Run any of the bamazon*.js files.
 
+For example: node bamazonCustomer.js
+Part 1: Customer View
+Running customer view will display a table of all the products available to purchase. If the customer wants to buy something, they answer the prompt with the index of this product. They enter the quantity they want to buy to place their order. Low stock will prevent the order from going through.
 
-item_id (unique id for each product)
-product_name (Name of product)
-department_name
-price (cost to customer)
-stock_quantity (how much of the product is available in stores)
+Customer View
 
+Part 2: Manager View
+Manager view has four options. The Manager can view all products, view only products with low stock (less than 5 items), add stock for a particular item, or create an entirely new item. Viewing all or low stock items logs a formatted table to the console. Adding stock compiles a list of all items for the manager to choose from, then asks how many they want to add. Adding a new item takes input from the command line to complete each column in the database.
 
+Manager View
 
-Populate this database with around 10 different products. (i.e. Insert "mock" data rows into this database and table).
-Then create a Node application called bamazonCustomer.js. Running this application will first display all of the items available for sale. Include the ids, names, and prices of products for sale.
-The app should then prompt users with two messages.
+Technologies Used:
+npm packages
+mySQL / Sequel Pro
+Node.js
 
+Code Explanation:
+Creates a connection between MySQL Database and Node.
+var mysql = require("mysql");
 
-
-The first should ask them the ID of the product they would like to buy.
-The second message should ask how many units of the product they would like to buy.
-
-
-
-Once the customer has placed the order, your application should check if your store has enough of the product to meet the customer's request.
-
-
-
-If not, the app should log a phrase like Insufficient quantity!, and then prevent the order from going through.
-
-
-
-However, if your store does have enough of the product, you should fulfill the customer's order.
-
-
-This means updating the SQL database to reflect the remaining quantity.
-Once the update goes through, show the customer the total cost of their purchase.
-
-
-
-
-
-
-
-If this activity took you between 8-10 hours, then you've put enough time into this assignment. Feel free to stop here -- unless you want to take on the next challenge.
-
-
-
-
-
-Challenge #2: Manager View (Next Level)
-
-
-
-Create a new Node application called bamazonManager.js. Running this application will:
-
-
-List a set of menu options:
-View Products for Sale
-View Low Inventory
-Add to Inventory
-Add New Product
-If a manager selects View Products for Sale, the app should list every available item: the item IDs, names, prices, and quantities.
-If a manager selects View Low Inventory, then it should list all items with an inventory count lower than five.
-If a manager selects Add to Inventory, your app should display a prompt that will let the manager "add more" of any item currently in the store.
-If a manager selects Add New Product, it should allow the manager to add a completely new product to the store.
-
-
-
-
-
-
-
-If you finished Challenge #2 and put in all the hours you were willing to spend on this activity, then rest easy! Otherwise continue to the next and final challenge.
-
-
-
-
-
+var connection = mysql.createConnection({
+    host: " ",
+    port: " ",
+    user: " ",
+    password: "",
+    database: "Bamazon"
+});
