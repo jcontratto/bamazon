@@ -23,7 +23,7 @@ Manager view has four options. The Manager can view all products, view only prod
 Manager View
 
 Technologies Used:
-npm packages
-mySQL / Sequel Pro
-Node.js
+* npm packages
+* mySQL / Sequel Pro
+* Node.js
 
