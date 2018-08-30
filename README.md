@@ -39,7 +39,7 @@ Running bamazonManager.js has four options. The Manager can view all products, v
 
 ![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
 
-* Use arrow key and click on to "Add to Inveotry" to add new product to inventory. It will ask which Item ID number you want to add to, then ask how many you would like to add and will add that number to the current invenotry for that Item ID.
+* Use arrow key and click on to "Add to Invenotry" to add new product to inventory. It will ask which Item ID number you want to add to, then ask how many you would like to add and will add that number to the current invenotry for that Item ID.
 
 ![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
 
