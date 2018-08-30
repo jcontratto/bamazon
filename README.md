@@ -23,7 +23,7 @@ Running bamazonCustomer.js will display a table of all the products available to
 
 
 Part 2: Manager View  
-Running bamazonManager.js has four options. The Manager can view all products, view only products with low stock (less than 5 items), add stock for a particular item, or create an entirely new item. Viewing all or low stock items logs a formatted table to the console. Adding stock compiles a list of all items for the manager to choose from, then asks how many they want to add. Adding a new item takes input from the command line to complete each column in the database.
+Running bamazonManager.js has four options. The Manager can view all products, view only products with low stock (less than 5 items), add stock for a particular item, or create an entirely new item.
 
 * Click on "View Products for Sale" to see current inventory.
 
