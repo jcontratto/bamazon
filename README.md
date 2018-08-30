@@ -13,14 +13,14 @@ Run any of the bamazon*.js files.
 
 For example: node bamazonCustomer.js
 Part 1: Customer View
-Running customer view will display a table of all the products available to purchase. If the customer wants to buy something, they answer the prompt with the index of this product. They enter the quantity they want to buy to place their order. Low stock will prevent the order from going through.
+Running bamazonCustomer.js will display a table of all the products available to purchase. If the customer wants to buy something, they answer the prompt with the index of this product. They enter the quantity they want to buy to place their order. Low stock will prevent the order from going through.
 
-![Screenshot video](https://github.com/jcontratto/bamazonCustomer.gif)
+![Screenshot video](https://C:/Usersjohnm/Desktop/bamazon/bamazonCustomer.gif)
 
 Part 2: Manager View
-Manager view has four options. The Manager can view all products, view only products with low stock (less than 5 items), add stock for a particular item, or create an entirely new item. Viewing all or low stock items logs a formatted table to the console. Adding stock compiles a list of all items for the manager to choose from, then asks how many they want to add. Adding a new item takes input from the command line to complete each column in the database.
+Running bamazonManager.js has four options. The Manager can view all products, view only products with low stock (less than 5 items), add stock for a particular item, or create an entirely new item. Viewing all or low stock items logs a formatted table to the console. Adding stock compiles a list of all items for the manager to choose from, then asks how many they want to add. Adding a new item takes input from the command line to complete each column in the database.
 
-Manager View
+![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
 
 Technologies Used:
 * npm packages
