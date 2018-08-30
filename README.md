@@ -25,7 +25,23 @@ Running bamazonCustomer.js will display a table of all the products available to
 Part 2: Manager View  
 Running bamazonManager.js has four options. The Manager can view all products, view only products with low stock (less than 5 items), add stock for a particular item, or create an entirely new item. Viewing all or low stock items logs a formatted table to the console. Adding stock compiles a list of all items for the manager to choose from, then asks how many they want to add. Adding a new item takes input from the command line to complete each column in the database.
 
+* Click on "View Products for Sale" to see current inventory.
+
 ![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+
+* Use arrow key and click on "View Low Invenotry" to see 5 items with the lowest inventory.
+
+![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+
+* Use arrow key and click on to "Add to Inveotry" to add new product to inventory. It will ask which Item ID number you want to add to, then ask how many you would like to add and will add that number to the current invenotry for that Item ID.
+
+![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+
+* Use arrow key and select "Add New Product" and will be able to add a new item to inventory. It will ask for the product name, which department to add it to, how much each unit is and then how many are in stock. 
+
+![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+
+
 
 Technologies Used:
 * npm packages
