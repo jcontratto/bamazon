@@ -1,18 +1,24 @@
 Bamazon 
 
-A virtual storefront implemented with Node.js and MySQL. The store and its database can be interacted with as a customer, manager, or supervisor, where each role allows different permissions and functionality.
+A virtual storefront implemented with Node.js and MySQL. The store and its database can be interacted with as a customer or manager, where each role allows different permissions and functionality.
+
+Technologies Used:
+* npm packages
+* mySQL / Sequel Pro
+* Node.js
 
 Installation
 Clone this repository: git clone https://github.com/jcontratto/bamazon.git
 
-You will need to set up a local database to run this code. The database and tables were created using the SQL in bamazon_db.sql and the authentication in connection.js. Edit this file to fit your local instance.
+You will need to set up a local database to run this code. The database and tables were created using the SQL in bamazon.sql and the authentication in connection.js. 
 
 Install npm dependencies with npm install
 
 Run any of the bamazon*.js files.
 
-For example: node bamazonCustomer.js
-Part 1: Customer View
+For example: node bamazonCustomer.js.
+
+Part 1: Customer 
 Running bamazonCustomer.js will display a table of all the products available to purchase. If the customer wants to buy something, they answer the prompt with the index of this product. They enter the quantity they want to buy to place their order.
 
 ![Screenshot video](https://C:/Users/johnm/Desktop/bamazon/bamazonCustomer.gif)
@@ -22,7 +28,7 @@ Running bamazonCustomer.js will display a table of all the products available to
 ![Screenshot video](https://C:/Users/johnm/Desktop/bamazon/bamazonCustomer.gif)
 
 
-Part 2: Manager View  
+Part 2: Manager  
 Running bamazonManager.js has four options. The Manager can view all products, view only products with low stock (less than 5 items), add stock for a particular item, or create an entirely new item.
 
 * Click on "View Products for Sale" to see current inventory.
@@ -43,8 +49,4 @@ Running bamazonManager.js has four options. The Manager can view all products, v
 
 
 
-Technologies Used:
-* npm packages
-* mySQL / Sequel Pro
-* Node.js
 
