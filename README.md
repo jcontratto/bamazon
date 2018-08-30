@@ -33,19 +33,19 @@ Running bamazonManager.js has four options. The Manager can view all products, v
 
 * Click on "View Products for Sale" to see current inventory.
 
-![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+![Screenshot video](https://github.com/jcontratto/bamazon/blob/master/bamazonManagerSales.gif)
 
 * Use arrow key and click on "View Low Invenotry" to see 5 items with the lowest inventory.
 
-![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+![Screenshot video](https://github.com/jcontratto/bamazon/blob/master/bamazonManagerInventory.gif)
 
 * Use arrow key and click on to "Add to Invenotry" to add new product to inventory. It will ask which Item ID number you want to add to, then ask how many you would like to add and will add that number to the current invenotry for that Item ID.
 
-![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+![Screenshot video](https://github.com/jcontratto/bamazon/blob/master/bamazonManagerAdd.gif)
 
 * Use arrow key and select "Add New Product" and will be able to add a new item to inventory. It will ask for the product name, which department to add it to, how much each unit is and then how many are in stock. 
 
-![Screenshot video](https://github.com/jcontratto/bamazonManager.gif)
+![Screenshot video](https://github.com/jcontratto/bamazon/blob/master/bamazonManagerAddNew.gif)
 
 
 
