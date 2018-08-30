@@ -25,7 +25,7 @@ Running bamazonCustomer.js will display a table of all the products available to
 
 * If you enter a number that's more than the quanity already stored, an error message will appear and restart by asking you for another product and quanity.
 
-![Screenshot video](https://C:/Users/johnm/Desktop/bamazon/bamazonCustomer.gif)
+![Screenshot video](https://github.com/jcontratto/bamazon/blob/master/bamazonCustomerError.gif)
 
 
 Part 2: Manager  
