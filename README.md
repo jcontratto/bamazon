@@ -13,7 +13,7 @@ Run any of the bamazon*.js files.
 
 For example: node bamazonCustomer.js
 Part 1: Customer View
-Running bamazonCustomer.js will display a table of all the products available to purchase. If the customer wants to buy something, they answer the prompt with the index of this product. They enter the quantity they want to buy to place their order. Low stock will prevent the order from going through.
+Running bamazonCustomer.js will display a table of all the products available to purchase. If the customer wants to buy something, they answer the prompt with the index of this product. They enter the quantity they want to buy to place their order.
 
 ![Screenshot video](https://C:/Users/johnm/Desktop/bamazon/bamazonCustomer.gif)
 
