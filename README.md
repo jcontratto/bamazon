@@ -21,7 +21,7 @@ For example: node bamazonCustomer.js.
 Part 1: Customer 
 Running bamazonCustomer.js will display a table of all the products available to purchase. If the customer wants to buy something, they answer the prompt with the index of this product. They enter the quantity they want to buy to place their order.
 
-![Screenshot video](https://C:/Users/johnm/Desktop/bamazon/bamazonCustomer.gif)
+![Screenshot video](https://github.com/jcontratto/bamazon/bamazonCustomer.gif)
 
 * If you enter a number that's more than the quanity already stored, an error message will appear and restart by asking you for another product and quanity.
 
