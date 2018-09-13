@@ -24,7 +24,7 @@ function validateInput(value) {
 	if (integer && (sign === 1)) {
 		return true;
 	} else {
-		return 'Please enter a whole non-zero number.';
+		return 'Please enter a real number.';
 	}
 }
 
@@ -37,7 +37,7 @@ function promptUserPurchase() {
 		{
 			type: 'input',
 			name: 'item_id',
-			message: 'Please enter the Item ID you would like to purchase.',
+			message: 'Please enter the ID number you want.',
 			validate: validateInput,
 			filter: Number
 		},
@@ -70,12 +70,11 @@ function promptUserPurchase() {
 			} else {
 				var productData = data[0];
 
-				// console.log('productData = ' + JSON.stringify(productData));
-				// console.log('productData.stock_quantity = ' + productData.stock_quantity);
+				// console.log('productData = ' + JSON.stringify(productData))
 
 				// If the quantity requested by the user is in stock
 				if (quantity <= productData.stock_quantity) {
-					console.log('Congratulations, the product you requested is in stock! Placing order!');
+					console.log('Congratulations, we have some in stock! Placing order!');
 
 					// Construct the updating query string
 					var updateQueryStr = 'UPDATE products SET stock_quantity = ' + (productData.stock_quantity - quantity) + ' WHERE item_id = ' + item;
@@ -85,8 +84,8 @@ function promptUserPurchase() {
 					connection.query(updateQueryStr, function(err, data) {
 						if (err) throw err;
 
-						console.log('Your oder has been placed! Your total is $' + productData.price * quantity);
-						console.log('Thank you for buying our product!');
+						console.log('Just placed your order! Your total bill is $' + productData.price * quantity);
+						console.log('Thanks for using Bamazon!');
 						console.log("\n---------------------------------------------------------------------\n");
 
 						// End the database connection
