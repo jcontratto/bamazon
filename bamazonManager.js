@@ -36,17 +36,16 @@ function promptManagerAction() {
 				} else if (val === 'Add New Product') {
 					return 'newProduct';
 				} else {
-				
+
 					console.log('ERROR: Unsupported operation!');
 					exit(1);
 				}
 			}
 		}
-	]).then(function(input) {
-		// console.log('User has selected: ' + JSON.stringify(input));
+	]).then(function (input) {
 
 		// Trigger the appropriate action based on the user input
-		if (input.option ==='sale') {
+		if (input.option === 'sale') {
 			displayInventory();
 		} else if (input.option === 'lowInventory') {
 			displayLowInventory();
@@ -56,7 +55,7 @@ function promptManagerAction() {
 			createNewProduct();
 		} else {
 			// This case should be unreachable
-			console.log('ERROR: Unsupported operation!');
+			console.log('ERROR: Do not compute!');
 			exit(1);
 		}
 	})
@@ -70,7 +69,7 @@ function displayInventory() {
 	queryStr = 'SELECT * FROM products';
 
 	// Make the db query
-	connection.query(queryStr, function(err, data) {
+	connection.query(queryStr, function (err, data) {
 		if (err) throw err;
 
 		console.log('Existing Inventory: ');
@@ -88,7 +87,7 @@ function displayInventory() {
 			console.log(strOut);
 		}
 
-	  	console.log("---------------------------------------------------------------------\n");
+		console.log("---------------------------------------------------------------------\n");
 
 		connection.end();
 	})
@@ -102,7 +101,7 @@ function displayLowInventory() {
 	queryStr = 'SELECT * FROM products WHERE stock_quantity < 100';
 
 	// Make the db query
-	connection.query(queryStr, function(err, data) {
+	connection.query(queryStr, function (err, data) {
 		if (err) throw err;
 
 		console.log('Low Inventory Items (below 100): ');
@@ -120,7 +119,7 @@ function displayLowInventory() {
 			console.log(strOut);
 		}
 
-	  	console.log("---------------------------------------------------------------------\n");
+		console.log("---------------------------------------------------------------------\n");
 
 		connection.end();
 	})
@@ -133,7 +132,7 @@ function validateInteger(value) {
 	if (integer && (sign === 1)) {
 		return true;
 	} else {
-		return 'Please enter a whole non-zero number.';
+		return 'Please enter a real number.';
 	}
 }
 
@@ -146,7 +145,7 @@ function validateNumeric(value) {
 	if (number && positive) {
 		return true;
 	} else {
-		return 'Please enter a positive number for the unit price.'
+		return 'Please enter a positive number for payment.'
 	}
 }
 
@@ -159,7 +158,7 @@ function addInventory() {
 		{
 			type: 'input',
 			name: 'item_id',
-			message: 'Please enter the Item ID for stock_count update.',
+			message: 'Please enter ID number for stock_count.',
 			validate: validateInteger,
 			filter: Number
 		},
@@ -170,7 +169,7 @@ function addInventory() {
 			validate: validateInteger,
 			filter: Number
 		}
-	]).then(function(input) {
+	]).then(function (input) {
 		// console.log('Manager has selected: \n    item_id = '  + input.item_id + '\n    additional quantity = ' + input.quantity);
 
 		var item = input.item_id;
@@ -179,21 +178,17 @@ function addInventory() {
 		//Determine the current stock_count
 		var queryStr = 'SELECT * FROM products WHERE ?';
 
-		connection.query(queryStr, {item_id: item}, function(err, data) {
+		connection.query(queryStr, { item_id: item }, function (err, data) {
 			if (err) throw err;
 
 			// console.log('data = ' + JSON.stringify(data));
 
 			if (data.length === 0) {
-				console.log('ERROR: Invalid Item ID. Please select a valid Item ID.');
+				console.log('ERROR: Invalid Item ID. Does not compute.');
 				addInventory();
 
 			} else {
 				var productData = data[0];
-
-				// console.log('productData = ' + JSON.stringify(productData));
-				// console.log('productData.stock_quantity = ' + productData.stock_quantity);
-
 				console.log('Updating Inventory...');
 
 				//Updating query string
@@ -201,10 +196,10 @@ function addInventory() {
 				// console.log('updateQueryStr = ' + updateQueryStr);
 
 				// Update the inventory
-				connection.query(updateQueryStr, function(err, data) {
+				connection.query(updateQueryStr, function (err, data) {
 					if (err) throw err;
 
-					console.log('Stock count for Item ID ' + item + ' has been updated to ' + (productData.stock_quantity + addQuantity) + '.');
+					console.log('Stock count for ID number' + item + ' has been updated to ' + (productData.stock_quantity + addQuantity) + '.');
 					console.log("\n---------------------------------------------------------------------\n");
 
 					connection.end();
@@ -242,13 +237,13 @@ function createNewProduct() {
 			message: 'How many items are in stock?',
 			validate: validateInteger
 		}
-	]).then(function(input) {
+	]).then(function (input) {
 		// console.log('input: ' + JSON.stringify(input));
 
-		console.log('Adding New Item: \n    product_name = ' + input.product_name + '\n' +  
-									   '    department_name = ' + input.department_name + '\n' +  
-									   '    price = ' + input.price + '\n' +  
-									   '    stock_quantity = ' + input.stock_quantity);
+		console.log('Adding New Item: \n    product_name = ' + input.product_name + '\n' +
+			'    department_name = ' + input.department_name + '\n' +
+			'    price = ' + input.price + '\n' +
+			'    stock_quantity = ' + input.stock_quantity);
 
 		// Create the insertion query string
 		var queryStr = 'INSERT INTO products SET ?';
@@ -257,7 +252,7 @@ function createNewProduct() {
 		connection.query(queryStr, input, function (error, results, fields) {
 			if (error) throw error;
 
-			console.log('New product has been added to the inventory under Item ID ' + results.insertId + '.');
+			console.log('New product has been added to the inventory under ID number' + results.insertId + '.');
 			console.log("\n---------------------------------------------------------------------\n");
 
 			// End the database connection
@@ -267,7 +262,7 @@ function createNewProduct() {
 }
 
 function runBamazon() {
-		// Prompt manager for input
+	// Prompt manager for input
 	promptManagerAction();
 }
 
